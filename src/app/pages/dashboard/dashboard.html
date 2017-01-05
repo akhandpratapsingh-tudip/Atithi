@@ -1,0 +1,129 @@
+<div class="container-fluid">
+    <div class="row">
+        <div>
+           <div>
+                <nav class="navbar navbar-inverse" style="background:darkslateblue;" >
+
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+                        <ul class="nav navbar-nav" id="bar">
+                            <li ><a data-toggle="tab" href="#View" (click)="getVisitors()">View Visitor</a></li>
+                            <li ><a data-toggle="tab" href="#add">Add Visitor</a></li>
+                        </ul>
+
+                        <button class="btn btn-success" [routerLink]="['/login']" (click)="logout()" style="float:right;">
+                        <span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></button>
+                    </div>
+                </nav>
+                <br>
+
+                <div class="tab-content">
+                    <div  id="View" class="tab-pane fade in active">
+                        <div *ngIf = "editVisitor" class="col-md-6 col-md-offset-3 jumbotron" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <h2 align="center" style="background-color:lightblue; padding:10px; border-radius:10px; text-shadow: 2px 2px blue;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            Update Visitor</h2><hr>
+                            <form  [formGroup]="form" class="form" (ngSubmit)="update(form.value)">
+
+                                <div class="txtschool">
+                                    <label for="name">Name</label>
+                                    <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" [value]="visitorEdit.name">
+                                </div>
+
+                                <div class="txtschool">
+                                    <label for="email">Email</label>
+                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" [value]="visitorEdit.email" >
+                                </div>
+
+                                <div class="txtschool">
+                                    <label for="mobile">Mobile</label>
+                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" [value]= "visitorEdit.phone_no" >
+
+                                </div>
+
+                                <div class="txtschool">
+                                    <label for="intime">In Time</label>
+                                    <input  [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" [value]="visitorEdit.in_time" >
+
+                                </div>
+
+                                <div class="txtschool">
+                                    <label for="outtime">Out Time</label>
+                                    <input  [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control" style="padding: 18px !important;" [value]="visitorEdit.out_time" >
+                                </div>
+                                <div class="txtschool">
+                                    <br><button  type="submit" class="btn btn-info btn-md" >Update</button>
+                                </div>
+                            </form>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <div *ngIf = "visitors==0"> <h2 style="color: blue">No Visitors, Please add visitors.</h2></div>
+                            <div *ngIf = "visitors!=0">
+                            <h2 style="color: blue">View Visitor's</h2><hr>
+                                <table class="table table-striped" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <tr>
+                                        <th><b>Id</b></th>
+                                        <th><b>Name</b></th>
+                                        <th><b>Email</b></th>
+                                        <th><b>Phone No</b></th>
+                                        <th><b>In Time</b></th>
+                                        <th><b>Out Time</b></th>
+                                        <th><b>Action</b></th>
+                                    </tr>
+                                    <tr *ngFor="let visitor of visitors">
+                                        <td>{{visitor.id}}</td>
+                                        <td>{{visitor.name}}</td>
+                                        <td>{{visitor.email}}</td>
+                                        <td>{{visitor.phone_no}}</td>
+                                        <td>{{visitor.in_time}}</td>
+                                        <td>{{visitor.out_time}}</td>
+                                        <td>
+                                        <button class="btn btn-info" type="button" (click)="edit(visitor)"><span class="glyphicon glyphicon-edit">&nbsp;Edit</span></button>
+                                        <button class="btn btn-danger" type="button" (click)="delete(visitor.id)"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                         </div>
+                            <div id="add" class="tab-pane fade">
+
+                                <div class="col-md-6 col-md-offset-3 jumbotron" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <h2 align="center" style="background-color:#B1F5FB;color: blue;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding:10px; border-radius:10px;">
+                                    Add New Visitor</h2><hr>
+                                    <form  [formGroup]="form" class="form" (ngSubmit)="onSubmit(form.value)">
+
+                                        <div class="txtschool">
+                                            <label for="name">Name</label>
+                                            <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" placeholder="Name">
+                                        </div>
+
+                                        <div class="txtschool">
+                                            <label for="email">Email</label>
+                                            <input [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" placeholder="email" >
+                                        </div>
+                                        <div class="txtschool">
+                                            <label for="mobile">Mobile</label>
+                                            <input [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" placeholder="Mobile number" >
+                                        </div>
+                                        <div class="txtschool">
+                                            <label for="intime">In Time</label>
+                                            <input [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" placeholder="In Time" >
+                                        </div>
+                                        <div class="txtschool">
+                                            <label for="outtime">Out Time</label>
+                                            <input [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control"  style="padding: 18px !important;" placeholder="Out Time" >
+                                        </div>
+                                        <div class="txtschool">
+                                            <br><button  type="submit" class="btn btn-info btn-md" style="background: #B1F5FB; color: blue"  >Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                             </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

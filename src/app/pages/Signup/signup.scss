@@ -1,0 +1,135 @@
+@media screen and (min-width:200px) and (max-width: 700px){
+  .signupSegment{
+    width: 100% !important;
+  }
+  .horizontalLine{
+    display: inline-block;
+    width: 35%;
+    hr{
+      margin-top: -4px !important;
+      margin-bottom: 0 !important;
+    }
+  }
+  .signinText{
+    display: inline-block;
+    width: 27%;
+    padding: 0px;
+  }
+
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  .signupSegment{
+    width: 60% !important;
+  }
+  .horizontalLine{
+    display: inline-block;
+    width: 35%;
+    hr{
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+  .signinText{
+    display: inline-block;
+    width: 27%;
+  }
+
+}
+.signupContainer{
+  text-align: center;
+  .signupSegment{
+      width: 28%;
+      display: inline-block;
+      .logintitle{
+          width: 30%;
+          display: inline-block;
+          img{
+                  width: 100%;
+                  height: 100%;
+          }
+      }
+        div{
+
+             text-align: center;
+             font-size: 15px;
+             margin-top: 5%;
+             font-weight: 500;
+             letter-spacing: 0.005em;
+             font-family: ff-clan-web-pro, "Helvetica Neue", Helvetica, sans-serif;
+        }
+       .signin{
+           //font-size: 18px;
+           text-align: left;
+       }
+       .horizontalLine{
+            margin-left: 0 !important;
+            padding: 0 !important;
+            hr{
+                    border-top: 1px solid gainsboro !important;
+            }
+       }
+        .signinText{
+             margin-top: 6%;
+       }
+       .facebookButton{
+           padding: 0 7% 0 7%;
+       }
+       .divicon,.fbdivbutton{
+              background-color: #3b5998;
+              height: 68px;
+              line-height: 3.8;
+              text-align: left;
+              display: inline-block;
+               color: white;
+               font-weight: 700;
+               font-size: 18px;
+           }
+           .divicon{
+               border-right: thin solid rgba(51, 51, 51, 0.55);
+               text-align: center;
+               font-size: 27px;
+               line-height: 2.5;
+           }
+
+      .inputbutton{
+                height: 41px;
+                 line-height: 0.8;
+      }
+      .inputbox{
+          border-radius: 1px !important;
+          background-color: white !important;
+          width: 100%;
+          height: 100%;
+
+      }
+      .inputbox:focus{
+          border-color: #B1F5FB;
+          outline: 0;
+          outline: thin dotted \9;
+          box-shadow: inset 0 1px 1px #F5C6FA, 0 0 8px #F5C6FA;
+      }
+      .passwordtext{
+          margin-top: 3px !important;
+      }
+      .emailpass{
+          width: 100%;
+          height: 100%;
+          background-color: #1F618D;
+          color: white;
+      }
+         .emailpass:hover{
+               background-color: darkblue;
+          }
+      .forgotlink{
+          color: #37b38b;
+      }
+      .forgotline{
+          position: relative;
+          hr{
+                    border-top: 1px solid gainsboro !important;
+            }
+      }
+}
+}

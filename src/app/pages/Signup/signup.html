@@ -1,0 +1,40 @@
+ <div class="signupContainer" style="background: darkslateblue; height: 662px !important;">
+  <div class="row" class="signupSegment">
+      <div class="col-md-12">
+
+        <div class="thumbnail" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <a href="#" style="text-decoration:none;">
+            <img src="http://goomteeresorts.com/wp-content/uploads/2013/11/about-athithi.png" alt="ATITHI" style="width:100px; height:100px;">
+            <div class="caption">
+              <h4>ATITHI</h4>
+            </div>
+          </a>
+        </div>
+    </div>
+
+
+  <div class="col-md-12">
+    <div class="logintitle"><h4>Sign Up
+     </h4></div>
+  </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background:#ddd;">
+
+        <div  class="form-group" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+          <input [formControl]="name" type="text" [ngClass]="{'.ng-invalid': (!name.valid && name.touched), '.ng-valid': (name.valid && name.touched)}" class="form-control" id="inputName3" placeholder="Name" required>
+        </div>
+
+        <div class = "form-group" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+          <input type="text" [formControl]="email" [ngClass]="{'.ng-invalid': (!email.valid && email.touched), '.ng-valid': (email.valid && email.touched)}" class="form-control" id="inputEmail3" placeholder="Email" value="" required>
+
+        </div>
+        <div class = "form-group" [ngClass]="{'has-error': (!password.valid && name.password), 'has-success': (name.password && name.password)}">
+          <input type="password" [formControl]="password" [ngClass]="{'.ng-invalid': (!password.valid && password.touched), '.ng-valid': (password.valid && password.touched)}" class="form-control" id="inputPassword3" placeholder="Password" value="" required>
+        </div>
+        <div class = "form-group" style="padding-bottom:10px;display:inline-block">
+          <input class = "btn btn-primary"style="margin-right: 20px;" type="submit" value="Sign Up"><hr class = "col-md-9 offset-md-1">
+          <span ><a class="btn btn-primary" [routerLink]="['/login']" style="text-decoration: none; position:relative; ">Sign In</a></span>
+        </div>
+
+    </form>
+</div>
+ </div>
