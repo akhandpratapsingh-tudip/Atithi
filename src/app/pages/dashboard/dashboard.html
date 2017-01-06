@@ -28,23 +28,23 @@
 
                                 <div class="txtschool">
                                     <label for="name">Name</label>
-                                    <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" [value]="visitorEdit.name">
+                                    <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" [value]="visitorEdit.name" required>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="email">Email</label>
-                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" [value]="visitorEdit.email" >
+                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" [value]="visitorEdit.email" required >
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="mobile">Mobile</label>
-                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" [value]= "visitorEdit.phone_no" >
+                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" [value]= "visitorEdit.phone_no" required>
 
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="intime">In Time</label>
-                                    <input  [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" [value]="visitorEdit.in_time" >
+                                    <input  [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" [value]="visitorEdit.in_time" required>
 
                                 </div>
 
@@ -97,20 +97,20 @@
 
                                         <div class="txtschool">
                                             <label for="name">Name</label>
-                                            <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" placeholder="Name">
+                                            <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" placeholder="Name" required>
                                         </div>
 
                                         <div class="txtschool">
                                             <label for="email">Email</label>
-                                            <input [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" placeholder="email" >
+                                            <input [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" placeholder="email" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="mobile">Mobile</label>
-                                            <input [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" placeholder="Mobile number" >
+                                            <input [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" placeholder="Mobile number" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="intime">In Time</label>
-                                            <input [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" placeholder="In Time" >
+                                            <input [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" placeholder="In Time" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="outtime">Out Time</label>
