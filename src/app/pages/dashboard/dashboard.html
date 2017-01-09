@@ -30,12 +30,12 @@
 
                                 <div class="txtschool">
                                     <label for="name">Name</label>
-                                    <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" [value]="visitorEdit.name" required>
+                                    <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="email">Email</label>
-                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" [value]="visitorEdit.email" required >
+                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
                                 </div>
 
                                 <div class="txtschool">
@@ -101,12 +101,12 @@
 
                                         <div class="txtschool">
                                             <label for="name">Name</label>
-                                            <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" placeholder="Name" required>
+                                            <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" placeholder="Name" pattern="[a-zA-Z.]{3,20}" required>
                                         </div>
 
                                         <div class="txtschool">
                                             <label for="email">Email</label>
-                                            <input [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" placeholder="email" required>
+                                            <input [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" placeholder="email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="mobile">Mobile</label>
