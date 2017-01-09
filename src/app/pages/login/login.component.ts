@@ -19,6 +19,7 @@ export class Login {
   public loginError:string = "";
   useData: string;
   data:any;
+  logFail: boolean = false;
   constructor(public tokenhelp: TokenHelper ,fb:FormBuilder,private userService: UserService, private router: Router) {
 
     this.form = fb.group({
@@ -52,5 +53,6 @@ this.router.navigate(['dashboard']);
     this.invalidInput = true;
     this.submitted = false;
     this.loginError = error.error_message;
+    this.logFail = true;
   }
 }

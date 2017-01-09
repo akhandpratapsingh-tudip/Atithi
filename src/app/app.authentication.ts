@@ -38,29 +38,15 @@ export class AuthenticationHelper {
   }
 
   hasUser() {
+    let user: boolean;
+
     if (this.user) {
-      return true;
+      user = true;
     } else {
-      return false;
+      user = false;
     }
+    return user;
   }
-
-  isAdmin() {
-    if (this.user && this.user.role)
-      if (this.user.role.indexOf('admin') >= 0 || this.user.role.indexOf('superadmin') >= 0) {
-        return true;
-      } else {
-        return false;
-      }
-  }
-
- hasPermission(moduleName) {
-     if (this.user.modules.indexOf('leaderboard') >= 0) {
-         return true;
-     }else {
-         return false;
-     }
- }
 
  userValueChangedEvent(value): void {
   this.user = value;

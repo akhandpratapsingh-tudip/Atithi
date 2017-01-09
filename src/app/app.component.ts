@@ -1,10 +1,6 @@
 import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
-import { GlobalState } from './global.state';
 
-/*
- * App Component
- * Top Level Component
- */
+
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,

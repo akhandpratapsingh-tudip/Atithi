@@ -24,7 +24,7 @@
         </div>
 
         <div class = "form-group" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
-          <input type="text" [formControl]="email" [ngClass]="{'.ng-invalid': (!email.valid && email.touched), '.ng-valid': (email.valid && email.touched)}" class="form-control" id="inputEmail3" placeholder="Email" value="" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required>
+          <input type="text" [formControl]="email" [ngClass]="{'.ng-invalid': (!email.valid && email.touched), '.ng-valid': (email.valid && email.touched)}" class="form-control" id="inputEmail3" placeholder="Email" value="" pattern="[a-zA-Z0-9{@}a-zA-Z{.}a-zA-Z.]{4,50}"  required/>
 
         </div>
         <div class = "form-group" [ngClass]="{'has-error': (!password.valid && name.password), 'has-success': (name.password && name.password)}">

@@ -1,13 +1,10 @@
 import { Injectable , Inject} from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
-//import { AuthenticationHelper } from "./app.authentication";
 import { Router, ActivatedRoute } from '@angular/router';
 @Injectable()
 export class HttpClientHelper {
- // baseUrl:String  = 'http://52.91.19.85:3001/v1/';  // Serve URL to web API
-   baseUrl:String  = 'http://atithi.dev.tudip.com/';  // Local URL to web API
-  // baseUrl:String= 'http://144.214.55.144:3001/v1/';
+   baseUrl:String  = 'http://atithi.dev.tudip.com/';
   constructor(private http: Http, private router: Router) {
     this.http = http;
   }
@@ -15,7 +12,6 @@ export class HttpClientHelper {
   createAuthorizationHeader(): Headers {
      let headers = new Headers();
      headers.append('Content-Type', 'application/json');
-    //  headers.append('token', localStorage.getItem('token'));
      return headers;
   }
 
@@ -70,7 +66,7 @@ postByHeaderPreLogin(url, data, header) : Observable<any> {
   }
 
   private handleError(error: Response): Observable<any> {
-    let result = error.json();  
+    let result = error.json();
     if(!result || !result.error_message){
       result.error_message = 'Unexpected Error Occured at server';
     }

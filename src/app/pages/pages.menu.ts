@@ -292,19 +292,4 @@
           }
         ]
       },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'External Link',
-            url: 'http://akveo.com',
-            icon: 'ion-android-exit',
-            order: 800,
-            target: '_blank'
-          }
-        }
-      }
-    ]
-  }
-];
 

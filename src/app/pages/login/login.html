@@ -1,7 +1,12 @@
 <!--Sign In Page-->
 
 <div class="loginContainer" style="background: darkslateblue; height: 662px !important;">
+
   <div class="row" class="loginSegment">
+    <div *ngIf = "logFail" class="alert alert-warning alert-dismissable fade in">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Warning!</strong> Email or Password is incorrect
+    </div>
   <div class="col-md-12">
     <div class="thumbnail" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
       <a href="#" style="text-decoration:none;">
@@ -23,7 +28,7 @@
             <input [formControl]="password" type="password" class="form-control inputbox" id="inputPassword" placeholder="Password">
          </div>
          <div style="background:#dddddd;padding-bottom:10px;" class="form-group">
-           <button [disabled]="!form.valid || submitted" type="submit" class="btn btn-info"  style="color: black;   text-decoration: none;position:relative;">Sign In</button>
+           <button [disabled]="!form.valid || submitted" type="submit" class="btn btn-info"  >Sign In</button>
            <span><a class="btn btn-primary" [routerLink]="['/signup']" style="color: black; margin-left: 30px;  text-decoration: none;position:relative;">Sign Up</a></span>
            <hr class = "col-md-9 offset-md-1">
          </div>

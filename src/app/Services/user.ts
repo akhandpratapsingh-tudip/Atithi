@@ -16,7 +16,6 @@ export class UserService {
   private GetvisitorUrl:string= 'api/visitors?token=';
   private httpclient:Http;
 
-//private AddvisitorUrl:string= 'http://atithi.dev.tudip.com/visitors/store?token={'+localStorage.getItem('token')+'}';
 
   private AddvisitorUrl:string = 'api/visitors/store?token=';
   constructor(public tokenhelp: TokenHelper,httpClient: HttpClientHelper,private htttp:Http, private authentication:AuthenticationHelper ) {
@@ -42,7 +41,10 @@ private extractResponse(res: JSON) {
     return res;
   }
   private handleError(error: any) {
+    console.log("incorrect credentials");
     return Observable.throw(error);
+
+
   }
 
 
