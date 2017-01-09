@@ -1,3 +1,4 @@
+<!--Dashboard-->
 <div class="container-fluid">
     <div class="row">
         <div>
@@ -22,6 +23,7 @@
                 <div class="tab-content">
                     <div  id="View" class="tab-pane fade in active">
                         <div *ngIf = "editVisitor" class="col-md-6 col-md-offset-3 jumbotron" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          <!--Update Visitor Page-->
                             <h2 align="center" style="background-color:lightblue; padding:10px; border-radius:10px; text-shadow: 2px 2px blue;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             Update Visitor</h2><hr>
                             <form  [formGroup]="form" class="form" (ngSubmit)="update(form.value)">
@@ -61,6 +63,7 @@
                         <div class="col-md-12">
                             <div *ngIf = "visitors==0"> <h2 style="color: blue">No Visitors, Please add visitors.</h2></div>
                             <div *ngIf = "visitors!=0">
+                              <!--View Visitor-->
                             <h2 style="color: blue">View Visitor's</h2><hr>
                                 <table class="table table-striped" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                     <tr>
@@ -91,6 +94,7 @@
                             <div id="add" class="tab-pane fade">
 
                                 <div class="col-md-6 col-md-offset-3 jumbotron" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                  <!--Add New Visitor-->
                                     <h2 align="center" style="background-color:#B1F5FB;color: blue;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding:10px; border-radius:10px;">
                                     Add New Visitor</h2><hr>
                                     <form  [formGroup]="form" class="form" (ngSubmit)="onSubmit(form.value)">
