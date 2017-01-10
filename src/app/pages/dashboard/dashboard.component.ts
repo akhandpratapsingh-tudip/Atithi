@@ -10,6 +10,7 @@ import { Router, ActivatedRoute }       from '@angular/router';
   selector: 'dashboard',
   encapsulation: ViewEncapsulation.None,
   template: require('./dashboard.html'),
+  styles: [require('./dashboard.scss')],
 })
 
 export class dashboard implements OnInit  {

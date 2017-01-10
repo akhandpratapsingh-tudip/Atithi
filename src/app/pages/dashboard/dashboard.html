@@ -3,7 +3,7 @@
     <div class="row">
         <div>
            <div>
-                <nav class="navbar navbar-inverse" style="background:darkslateblue;" >
+                <nav class="navbar navbar-inverse navinfo">
 
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -13,7 +13,7 @@
                             <li ><a data-toggle="tab" href="#add">Add Visitor</a></li>
                         </ul>
 
-                        <button class="btn btn-success" [routerLink]="['/login']" (click)="logout()" style="float:right;">
+                        <button class="btn btn-success logoutbtn" [routerLink]="['/login']" (click)="logout()" >
                         <span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></button>
                     </div>
                 </nav>
@@ -21,40 +21,35 @@
 
                 <div class="tab-content">
                     <div  id="View" class="tab-pane fade in active">
-                        <div *ngIf = "editVisitor" class="col-md-6 col-md-offset-3 jumbotron" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <div *ngIf = "editVisitor" class="col-md-6 col-md-offset-3 jumbotron " >
                           <!--Update Visitor Page-->
-                            <h2 align="center" style="background-color:lightblue; padding:10px; border-radius:10px; text-shadow: 2px 2px blue;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <h2 align="center" class="updatevisitor">
                             Update Visitor</h2><hr>
-                            <form  [formGroup]="form" class="form" (ngSubmit)="update(form.value)">
+                            <form  [formGroup]="form" class="form"  (ngSubmit)="update(form.value)">
 
                                 <div class="txtschool">
                                     <label for="name">Name</label>
-                                    <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
+                                    <input [formControl]="name" type="text" class="login-input form-group form-control" id="name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="email">Email</label>
-                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
+                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" id="email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="mobile">Mobile</label>
-                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" [value]= "visitorEdit.phone_no" required>
+                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" id="mobile" [value]= "visitorEdit.phone_no" required>
 
                                 </div>
-
-
-
-
                                 <div class="txtschool">
                                     <label for="intime">In Time</label>
-                                    <input  [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" [value]="visitorEdit.in_time" required>
-
+                                    <input  [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" [value]="visitorEdit.in_time" required>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="outtime">Out Time</label>
-                                    <input  [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control" style="padding: 18px !important;" [value]="visitorEdit.out_time" >
+                                    <input  [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control"  [value]="visitorEdit.out_time" >
                                 </div>
                                 <div class="txtschool">
                                     <br><button  type="submit" class="btn btn-info btn-md" >Update</button>
@@ -64,11 +59,11 @@
                             <hr>
                         </div>
                         <div class="col-md-12">
-                            <div *ngIf = "visitors==0"> <h2 style="color: blue">No Visitors, Please add visitors.</h2></div>
+                            <div *ngIf = "visitors==0"> <h2 class="heading">No Visitors, Please add visitors.</h2></div>
                             <div *ngIf = "visitors!=0">
                               <!--View Visitor-->
-                            <h2 style="color: blue">View Visitor's</h2><hr>
-                                <table class="table table-striped" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <h2 class="heading">View Visitor's</h2><hr>
+                                <table class="table table-striped">
                                     <tr>
                                         <th><b>Id</b></th>
                                         <th><b>Name</b></th>
@@ -96,35 +91,34 @@
                          </div>
                             <div id="add" class="tab-pane fade">
 
-                                <div class="col-md-6 col-md-offset-3 jumbotron" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <div class="col-md-6 col-md-offset-3 jumbotron">
                                   <!--Add New Visitor-->
-                                    <h2 align="center" style="background-color:#B1F5FB;color: blue;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding:10px; border-radius:10px;">
+                                    <h2 align="center" class="addinfo">
                                     Add New Visitor</h2><hr>
                                     <form  [formGroup]="form" class="form" (ngSubmit)="onSubmit(form.value)">
-
                                         <div class="txtschool">
                                             <label for="name">Name</label>
-                                            <input [formControl]="name" type="text" class="login-input form-group form-control" style="padding: 18px !important;" id="name" placeholder="Name" pattern="[a-zA-Z.]{3,20}" required>
+                                            <input [formControl]="name" type="text" class="login-input form-group form-control" id="name" placeholder="Name" pattern="[a-zA-Z.]{3,20}" required>
                                         </div>
 
                                         <div class="txtschool">
                                             <label for="email">Email</label>
-                                            <input [formControl]="email"  type="email" class="login-input form-group form-control" style="padding: 18px !important;" id="email" placeholder="email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required>
+                                            <input [formControl]="email"  type="email" class="login-input form-group form-control" id="email" placeholder="email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="mobile">Mobile</label>
-                                            <input [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" style="padding: 18px !important;" id="mobile" placeholder="Mobile number" required>
+                                            <input [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" id="mobile" placeholder="Mobile number" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="intime">In Time</label>
-                                            <input [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" style="padding: 18px !important;" placeholder="In Time" required>
+                                            <input [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" placeholder="In Time" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="outtime">Out Time</label>
-                                            <input [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control"  style="padding: 18px !important;" placeholder="Out Time" >
+                                            <input [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control" placeholder="Out Time" >
                                         </div>
                                         <div class="txtschool">
-                                            <br><button  type="submit" class="btn btn-info btn-md" style="background: #B1F5FB; color: blue"  >Submit</button>
+                                            <br><button  type="submit" class="btn btn-info btn-md" >Submit</button>
                                         </div>
                                     </form>
                                 </div>
