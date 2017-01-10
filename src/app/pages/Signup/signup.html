@@ -1,8 +1,11 @@
- <div class="signupContainer" style="background: darkslateblue; height: 662px !important;">
-  <div class="row" class="signupSegment">
+<div class="signupContainer containerinformation" >
+  <div *ngIf = "signFail" class="alert alert-danger alert-dismissable fade in warn" >
+    <strong>Warning!</strong> Enter email in valid format. Eg:-"abc@def.com"
+  </div>
+  <div class="row" class="signupSegment" >
       <div class="col-md-12">
 
-        <div class="thumbnail" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div class="thumbnail thumb">
           <a href="#" style="text-decoration:none;">
             <img src="http://goomteeresorts.com/wp-content/uploads/2013/11/about-athithi.png" alt="ATITHI" style="width:100px; height:100px;">
             <div class="caption">
@@ -17,7 +20,7 @@
     <div class="logintitle"><h4>Sign Up
      </h4></div>
   </div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background:#ddd;">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal form" >
 
         <div  class="form-group" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
           <input [formControl]="name" type="text" [ngClass]="{'.ng-invalid': (!name.valid && name.touched), '.ng-valid': (name.valid && name.touched)}" class="form-control" id="inputName3" placeholder="Name" pattern="[a-zA-Z.]{3,20}" required>
@@ -30,11 +33,10 @@
         <div class = "form-group" [ngClass]="{'has-error': (!password.valid && name.password), 'has-success': (name.password && name.password)}">
           <input type="password" [formControl]="password" [ngClass]="{'.ng-invalid': (!password.valid && password.touched), '.ng-valid': (password.valid && password.touched)}" class="form-control" id="inputPassword3" placeholder="Password" value="" pattern="[a-zA-Z0-9@#!$%^&*.]{6,50}" required>
         </div>
-        <div class = "form-group" style="padding-bottom:10px;display:inline-block">
-          <input class = "btn btn-primary"style="margin-right: 20px;" type="submit" value="Sign Up"><hr class = "col-md-9 offset-md-1">
-          <a class="btn btn-info" [routerLink]="['/login']" style="text-decoration: none; position:relative;">Sign In</a>
+        <div class = "form-group">
+          <input class = "btn btn-primary btninfo" type="submit" value="Sign Up"><hr class = "col-md-9 offset-md-1">
+          <a class="btn btn-info" [routerLink]="['/login']" >Sign In</a>
         </div>
-
     </form>
 </div>
  </div>

@@ -32,6 +32,7 @@ export class SignUp {
   public invalidInput:boolean = false;
   public loginError:string = "";
   useData: string;
+  signFail : boolean = false;
   data:any;
 
   constructor(fb:FormBuilder,private userService: UserService, private router:Router) {
@@ -66,6 +67,8 @@ export class SignUp {
   public signupFail(error){
 
     console.log(error);
+    console.log("signup failed");
+    this.signFail = true;
     this.invalidInput = true;
     this.submitted = false;
     this.loginError = error.error_message;

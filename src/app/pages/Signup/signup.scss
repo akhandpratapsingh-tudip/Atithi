@@ -17,6 +17,26 @@
   }
 
 }
+
+
+.thumb{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.warn{
+  position: absolute; top:8px; right:40px;
+}
+
+.form{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background:#ddd;
+}
+.containerinformation{
+  background: darkslateblue;
+  position: relative;
+  height: 662px !important;
+}
+
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
@@ -37,6 +57,13 @@ and (max-device-width : 1024px) {
   }
 
 }
+
+.btninfo {
+  margin-right: 20px;
+}
+
+
+
 .signupContainer{
   text-align: center;
   .signupSegment{
