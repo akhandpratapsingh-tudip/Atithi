@@ -1,5 +1,5 @@
 import {ViewChild, OnInit, trigger} from '@angular/core';
-import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, AbstractControl, FormBuilder, Validators,NgModel } from '@angular/forms';
 import {UserService} from'../../Services/user';
 import {AuthenticationHelper} from '../../app.authentication';
 import {Component, ViewEncapsulation} from '@angular/core';
@@ -27,6 +27,7 @@ export class dashboard implements OnInit  {
    public visitors: Visitor[];
    public visitorEdit: Visitor;
    public editVisitor: boolean;
+   public hideElement:boolean=true;
  userData: string;
   loginError:any;
   data: any;
@@ -48,6 +49,8 @@ constructor(fb: FormBuilder, private userService: UserService ,  private router:
 }
 ngOnInit():void {
   this.getVisitors();
+
+
 }
 public onSubmit(values:Object):void {
     this.addVisitor(values);
@@ -72,7 +75,7 @@ public onSubmit(values:Object):void {
 
 }
  public addSucces(result) {
-    location.reload();
+    //location.reload();
   }
 
   public registerFail(error){
@@ -108,6 +111,7 @@ public delete(id){
       in_time: new Date(result.in_time).getTime()/1000,
       out_time: new Date(result.out_time).getTime()/1000,
     }
+    console.log("in time------->",this.in_time);
    this.userService.getUpdate(this.id,this.data).subscribe(
         data => this.getSucces(),
         error =>  this.Error(error)
@@ -130,7 +134,8 @@ public getVisitor(){
 public getSucces() {
     this.getVisitor();
     this.editVisitor = false;
-  }
+    this.hideElement=true;
+}
 
 public Error(error){
     this.invalidInput = true;

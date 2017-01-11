@@ -43,7 +43,7 @@ type StoreType = {
     ReactiveFormsModule,
     NgaModule.forRoot(),
     PagesModule,
-    routing
+    routing,
   ],
   providers: [
     ENV_PROVIDERS,

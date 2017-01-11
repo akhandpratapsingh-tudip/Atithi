@@ -9,8 +9,8 @@
                         <div class="navbar-header">
                         </div>
                         <ul class="nav navbar-nav" id="bar">
-                            <li ><a data-toggle="tab" href="#View" (click)="getVisitors()">View Visitor</a></li>
-                            <li ><a data-toggle="tab" href="#add">Add Visitor</a></li>
+                            <li ><a data-toggle="tab"  href="#View" (click)="getVisitors()">View Visitor</a></li>
+                            <li ><a data-toggle="tab"  href="#add">Add Visitor</a></li>
                         </ul>
 
                         <button class="btn btn-success logoutbtn" [routerLink]="['/login']" (click)="logout()" >
@@ -29,27 +29,27 @@
 
                                 <div class="txtschool">
                                     <label for="name">Name</label>
-                                    <input [formControl]="name" type="text" class="login-input form-group form-control" id="name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
+                                    <input [formControl]="name" type="text"  [(ngModel)]="name" name="name" class="login-input form-group form-control" id="name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="email">Email</label>
-                                    <input  [formControl]="email"  type="email" class="login-input form-group form-control" id="email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
+                                    <input  [formControl]="email"  type="email" [(ngModel)]="email" name="email" class="login-input form-group form-control" id="email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="mobile">Mobile</label>
-                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" id="mobile" [value]= "visitorEdit.phone_no" required>
+                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" name="mobile" [(ngModel)]="phone_no" class="login-input form-group form-control" id="mobile" [value]= "visitorEdit.phone_no" required>
 
                                 </div>
                                 <div class="txtschool">
                                     <label for="intime">In Time</label>
-                                    <input  [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" [value]="visitorEdit.in_time" required>
+                                    <input  [formControl]="in_time" type="datetime-local"   name="in_time" [(ngModel)]="in_time" class="login-input form-group form-control" [value]="visitorEdit.in_time" required>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="outtime">Out Time</label>
-                                    <input  [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control"  [value]="visitorEdit.out_time" >
+                                    <input  [formControl]="out_time" type="datetime-local"  name="out_time"  [(ngModel)]="out_time" class="login-input form-group form-control"  [value]="visitorEdit.out_time" >
                                 </div>
                                 <div class="txtschool">
                                     <br><button  type="submit" class="btn btn-info btn-md" >Update</button>
@@ -80,7 +80,14 @@
                                         <td>{{visitor.phone_no}}</td>
                                         <td>{{visitor.in_time}}</td>
                                         <td>{{visitor.out_time}}</td>
-                                        <td>
+
+                                      <td *ngIf="!hideElement"> <input [(ngModel)]="visitor.name"></td>
+                                      <td *ngIf="!hideElement"><input [(ngModel)]="visitor.name"></td>
+                                      <td *ngIf="!hideElement"><input [(ngModel)]="visitor.email"></td>
+                                      <td *ngIf="!hideElement"><input [(ngModel)]="visitor.phone_no"></td>
+                                      <td *ngIf="!hideElement"><input [(ngModel)]="visitor.in_time"></td>
+                                      <td *ngIf="!hideElement"><input [(ngModel)]="visitor.out_time"></td>
+                                    <td>
                                         <button class="btn btn-info" type="button" (click)="edit(visitor)"><span class="glyphicon glyphicon-edit">&nbsp;Edit</span></button>
                                         <button class="btn btn-danger" type="button" (click)="delete(visitor.id)"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</button>
                                         </td>
@@ -125,6 +132,6 @@
                              </div>
                 </div>
             </div>
-        </div>
+        </div>f
     </div>
 </div>
