@@ -34,6 +34,7 @@ export class Login {
     this.submitted = true;
     this.invalidInput = false;
     if (this.form.valid) {
+      //values['email']
       this.data = {
         email: values.email,
         password: values.password

@@ -29,28 +29,31 @@
 
                                 <div class="txtschool">
                                     <label for="name">Name</label>
-                                    <input [formControl]="name" type="text"  [(ngModel)]="name" name="name" class="login-input form-group form-control" id="name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
+                                    <input [formControl]="name" type="text"   name="name"  class="login-input form-group form-control" [(ngModel)]="visitorEdit.name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="email">Email</label>
-                                    <input  [formControl]="email"  type="email" [(ngModel)]="email" name="email" class="login-input form-group form-control" id="email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
+                                    <input  [formControl]="email"  type="email"  name="email" class="login-input form-group form-control" [(ngModel)]="visitorEdit.email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="mobile">Mobile</label>
-                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" name="mobile" [(ngModel)]="phone_no" class="login-input form-group form-control" id="mobile" [value]= "visitorEdit.phone_no" required>
-
+                                    <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" name="phone_no"  class="login-input form-group form-control" [(ngModel)]="visitorEdit.phone_no"[value]= "visitorEdit.phone_no" required>
                                 </div>
+
                                 <div class="txtschool">
                                     <label for="intime">In Time</label>
-                                    <input  [formControl]="in_time" type="datetime-local"   name="in_time" [(ngModel)]="in_time" class="login-input form-group form-control" [value]="visitorEdit.in_time" required>
+
+                                    <input [formControl]="in_time" type="datetime-local" name="in_time" class="login-input form-group form-control" required/>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="outtime">Out Time</label>
-                                    <input  [formControl]="out_time" type="datetime-local"  name="out_time"  [(ngModel)]="out_time" class="login-input form-group form-control"  [value]="visitorEdit.out_time" >
+
+                                    <input  [formControl]="out_time" type="datetime-local" name="out_time" class="login-input form-group form-control" [(ngModel)]="visitorEdit.out_time" />
                                 </div>
+
                                 <div class="txtschool">
                                     <br><button  type="submit" class="btn btn-info btn-md" >Update</button>
                                     <button class="btn btn-info btn-md"  (click)="editVisitor = false">Cancel</button>
@@ -114,24 +117,24 @@
                                         </div>
                                         <div class="txtschool">
                                             <label for="mobile">Mobile</label>
-                                            <input [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" class="login-input form-group form-control" id="mobile" placeholder="Mobile number" required>
+                                            <input [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}"  class="login-input form-group form-control" id="mobile" placeholder="Mobile number" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="intime">In Time</label>
-                                            <input [formControl]="in_time" type="datetime-local"  id="intime" class="login-input form-group form-control" placeholder="In Time" required>
+                                            <input [formControl]="in_time" type="datetime-local" id="intime"  class="login-input form-group form-control" placeholder="In Time" required>
                                         </div>
                                         <div class="txtschool">
                                             <label for="outtime">Out Time</label>
-                                            <input [formControl]="out_time" type="datetime-local"  id="outtime" class="login-input form-group form-control" placeholder="Out Time" >
+                                            <input [formControl]="out_time" type="datetime-local" id="outtime"  class="login-input form-group form-control" placeholder="Out Time" >
                                         </div>
                                         <div class="txtschool">
-                                            <br><button  type="submit" class="btn btn-info btn-md" >Submit</button>
+                                            <br><button  type="submit" class="btn btn-info btn-md"  >Submit</button>
                                         </div>
                                     </form>
                                 </div>
                              </div>
                 </div>
             </div>
-        </div>f
+        </div>
     </div>
 </div>

@@ -3,6 +3,7 @@ import { FormGroup, AbstractControl, FormBuilder, Validators,NgModel } from '@an
 import {UserService} from'../../Services/user';
 import {AuthenticationHelper} from '../../app.authentication';
 import {Component, ViewEncapsulation} from '@angular/core';
+import * as moment from 'moment';
 import {Visitor} from'./visitor';
 import { Router, ActivatedRoute }       from '@angular/router';
 
@@ -24,6 +25,8 @@ export class dashboard implements OnInit  {
   public invalidInput:boolean = false;
   public registerError:string = "";
   public id;
+  public dates: string;
+  public dates1:string;
    public visitors: Visitor[];
    public visitorEdit: Visitor;
    public editVisitor: boolean;
@@ -38,8 +41,8 @@ constructor(fb: FormBuilder, private userService: UserService ,  private router:
       'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'email': [],
       'mobile': ['', Validators.compose([Validators.required, Validators.minLength(10)])],
-      'in_time': [],
-      'out_time': []
+      'in_time': '',
+      'out_time': ''
     });
     this.name = this.form.controls['name'];
     this.email = this.form.controls['email'];
@@ -49,13 +52,12 @@ constructor(fb: FormBuilder, private userService: UserService ,  private router:
 }
 ngOnInit():void {
   this.getVisitors();
-
-
 }
+
 public onSubmit(values:Object):void {
     this.addVisitor(values);
   }
-   public addVisitor(values){
+  public addVisitor(values){
   this.submitted = true;
   this.invalidInput = false;
   var intime=1480132800;
@@ -65,7 +67,8 @@ public onSubmit(values:Object):void {
       email: values.email,
       phone_no:values.mobile,
       in_time: new Date(values.in_time).getTime()/1000,
-      out_time: new Date(values.out_time).getTime()/1000
+      out_time: new Date(values.out_time).getTime()/1000,
+
     };
 
    this.userService.addVisitor(this.data).subscribe(
@@ -75,7 +78,7 @@ public onSubmit(values:Object):void {
 
 }
  public addSucces(result) {
-    //location.reload();
+    location.reload();
   }
 
   public registerFail(error){
@@ -103,6 +106,7 @@ public delete(id){
       )
   }
 
+
   public update(result){
     this.data ={
       name: result.name,
@@ -110,17 +114,22 @@ public delete(id){
       phone_no:result.mobile,
       in_time: new Date(result.in_time).getTime()/1000,
       out_time: new Date(result.out_time).getTime()/1000,
-    }
-    console.log("in time------->",this.in_time);
+    };
    this.userService.getUpdate(this.id,this.data).subscribe(
         data => this.getSucces(),
         error =>  this.Error(error)
     )
   }
+
 public edit(visitorS) {
+  console.log("Edit:", visitorS);
   this.editVisitor = true;
   this.visitorEdit = visitorS;
-  this.id = visitorS.id;
+  this.form.controls['in_time'].setValue('07-07-2000' );
+  console.log("this.visitorEdit.in_time:", this.visitorEdit.in_time);
+  // this.visitorEdit.in_time = new Date(this.visitorEdit.in_time);
+  // this.visitorEdit.in_time = Date.parse(this.visitorEdit.in_time);
+  // console.log("this.visitorEdit.in_time:", (this.visitorEdit.in_time));
 }
 
 
@@ -135,6 +144,7 @@ public getSucces() {
     this.getVisitor();
     this.editVisitor = false;
     this.hideElement=true;
+    location.reload();
 }
 
 public Error(error){

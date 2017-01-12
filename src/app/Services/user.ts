@@ -55,6 +55,7 @@ addHeader(): Headers {
      return headers;
   }
   addVisitor (data): Observable<any> {
+    console.log("Save:", data);
     let url = "http://atithi.dev.tudip.com/api/visitors/store?token={"+localStorage.getItem('token')+"}";
     let header = this.addHeader();
     return this.htttp.post(url, data,{headers:header})
@@ -72,7 +73,6 @@ addHeader(): Headers {
   getAllVisitor (): Observable<any> {
 
     let url="http://atithi.dev.tudip.com/api/visitors?token={"+localStorage.getItem('token')+'}';
-    console.log("hi view visitors");
     let headers=this.addVisitorHeader();
     return this.htttp.get(url,{headers:headers})
         .map(this.extResponse)
@@ -81,7 +81,6 @@ addHeader(): Headers {
 
 
 getDeleted (id): Observable<any> {
-    console.log("hii");
     return this.htttp.delete("http://atithi.dev.tudip.com/api/visitors/"+id+"?token={"+localStorage.getItem('token')+"}")
         .map(this.extResponse)
         .catch(this.handleError);
@@ -95,12 +94,9 @@ getDeleted (id): Observable<any> {
   }
 
 
-  addvisDone(){
-    console.log("user added");
-  }
+  addvisDone(){}
  private extResponse(res: Response) {
     let body = res.json();
-    console.log(body);
     return body;
   }
 }
