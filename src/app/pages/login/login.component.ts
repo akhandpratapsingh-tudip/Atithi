@@ -7,7 +7,7 @@ import {TokenHelper} from '../token/token';
   selector: 'login',
   encapsulation: ViewEncapsulation.None,
   styles: [require('./login.scss')],
-  template: require('./login.html'),
+  templateUrl:'./login.html',
   })
 export class Login {
   private tokenKey: string = 'tokenKey';
@@ -21,12 +21,10 @@ export class Login {
   data:any;
   logFail: boolean = false;
   constructor(public tokenhelp: TokenHelper ,fb:FormBuilder,private userService: UserService, private router: Router) {
-
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
-
     this.email = this.form.controls['email'];
     this.password = this.form.controls['password'];
   }
@@ -34,7 +32,6 @@ export class Login {
     this.submitted = true;
     this.invalidInput = false;
     if (this.form.valid) {
-      //values['email']
       this.data = {
         email: values.email,
         password: values.password
@@ -47,8 +44,7 @@ export class Login {
     }
   }
   public loginSucces(result) {
-
-this.router.navigate(['dashboard']);
+  this.router.navigate(['dashboard']);
   }
   public loginFail(error){
     this.invalidInput = true;

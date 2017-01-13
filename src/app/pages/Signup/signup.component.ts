@@ -21,7 +21,7 @@ input[type=submit] {
   border-left: 5px solid #a94442; /* red */
 }
   `],
-  template: require('./signup.html'),
+  templateUrl:'./signup.html',
 })
 export class SignUp {
   public form:FormGroup;

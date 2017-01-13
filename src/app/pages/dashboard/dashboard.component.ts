@@ -10,7 +10,7 @@ import { Router, ActivatedRoute }       from '@angular/router';
 @Component({
   selector: 'dashboard',
   encapsulation: ViewEncapsulation.None,
-  template: require('./dashboard.html'),
+  templateUrl:'./dashboard.html',
   styles: [require('./dashboard.scss')],
 })
 
@@ -38,7 +38,7 @@ export class dashboard implements OnInit  {
 constructor(fb: FormBuilder, private userService: UserService ,  private router: Router, private authentication: AuthenticationHelper){
 
  this.form = fb.group({
-      'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'name': ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       'email': [],
       'mobile': ['', Validators.compose([Validators.required, Validators.minLength(10)])],
       'in_time': '',
@@ -82,7 +82,6 @@ public onSubmit(values:Object):void {
   }
 
   public registerFail(error){
-    /*toastr.error(error.message);*/
     this.invalidInput = true;
     this.submitted = false;
     this.loginError = error.message;
@@ -125,11 +124,12 @@ public edit(visitorS) {
   console.log("Edit:", visitorS);
   this.editVisitor = true;
   this.visitorEdit = visitorS;
-  this.form.controls['in_time'].setValue('07-07-2000' );
-  console.log("this.visitorEdit.in_time:", this.visitorEdit.in_time);
+  // this.form.controls['in_time'].setValue('07-07-2000' );
+  // console.log("this.visitorEdit.in_time:", this.visitorEdit.in_time);
   // this.visitorEdit.in_time = new Date(this.visitorEdit.in_time);
   // this.visitorEdit.in_time = Date.parse(this.visitorEdit.in_time);
   // console.log("this.visitorEdit.in_time:", (this.visitorEdit.in_time));
+  this.id=visitorS.id;
 }
 
 

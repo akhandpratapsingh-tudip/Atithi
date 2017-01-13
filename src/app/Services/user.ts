@@ -6,8 +6,6 @@ import { HttpClientHelper } from '../app.httpclient';
 import {AuthenticationHelper} from '../app.authentication';
 import {TokenHelper} from '../pages/token/token';
 import 'rxjs/Rx';
-// import localStorage from 'localStorage';
-
 @Injectable()
 export class UserService {
   private loginUrl: string = 'api/auth/login';
@@ -87,7 +85,8 @@ getDeleted (id): Observable<any> {
   }
 
   getUpdate (id,result): Observable<any> {
-    console.log(result);
+    console.log("=====",result);
+    console.log("id=======",id);
     return this.htttp.post("http://atithi.dev.tudip.com/api/visitors/"+id+"?token={"+localStorage.getItem('token')+"}",result)
         .map(this.extResponse)
         .catch(this.handleError);

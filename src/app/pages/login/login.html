@@ -5,13 +5,10 @@
     <strong>Warning!</strong> Email or Password is incorrect
   </div>
   <div class="row" class="loginSegment">
-
-
   <div class="col-md-12">
     <div class="thumbnail">
       <a href="#">
-        <img src="http://goomteeresorts.com/wp-content/uploads/2013/11/about-athithi.png" alt="ATITHI" class="image"
-             >
+        <img src="http://goomteeresorts.com/wp-content/uploads/2013/11/about-athithi.png" alt="ATITHI" class="image">
         <div class="caption">
           <h4>ATITHI</h4>
         </div>
@@ -21,14 +18,14 @@
   <div class="col-md-12"><h3>Sign In</h3></div>
    <div>
     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal" >
-         <div class = "form-group row col-md-12 inputbutton emaildiv" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
-            <input [formControl]="email" type="email" class="form-control inputbox" id="inputEmail" placeholder="Email" >
+         <div class = "form-group row col-md-12 inputbutton emaildiv" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}" required="Email Required">
+            <input [formControl]="email" type="email" class="form-control inputbox" id="inputEmail" placeholder="Email" required/>
          </div>
          <div class="form-group row col-md-12 inputbutton passwordtext" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
-            <input [formControl]="password" type="password" class="form-control inputbox" id="inputPassword" placeholder="Password">
+            <input [formControl]="password" type="password" class="form-control inputbox" id="inputPassword" placeholder="Password" required/>
          </div>
-         <div style="background:#dddddd;padding-bottom:10px;" class="form-group">
-           <button [disabled]="!form.valid || submitted" type="submit" class="btn btn-info">Sign In</button>
+         <div  class="form-group">
+           <button  type="submit" class="btn btn-info">Sign In</button>
            <span><a class="btn btn-primary" [routerLink]="['/signup']">Sign Up</a></span>
            <hr class = "col-md-9 offset-md-1">
          </div>

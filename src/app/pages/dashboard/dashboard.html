@@ -45,13 +45,13 @@
                                 <div class="txtschool">
                                     <label for="intime">In Time</label>
 
-                                    <input [formControl]="in_time" type="datetime-local" name="in_time" class="login-input form-group form-control" required/>
+                                    <input [formControl]="in_time" type="datetime" name="in_time" class="login-input form-group form-control" [(ngModel)]="visitorEdit.in_time" required/>
                                 </div>
 
                                 <div class="txtschool">
                                     <label for="outtime">Out Time</label>
 
-                                    <input  [formControl]="out_time" type="datetime-local" name="out_time" class="login-input form-group form-control" [(ngModel)]="visitorEdit.out_time" />
+                                    <input  [formControl]="out_time" type="datetime" name="out_time" class="login-input form-group form-control" [(ngModel)]="visitorEdit.out_time" required/>
                                 </div>
 
                                 <div class="txtschool">
