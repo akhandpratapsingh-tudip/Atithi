@@ -41,7 +41,7 @@ and (max-device-width : 1024px) {
       top:-16px;
     }
 }
-.thumbinfo{
+.thumbnail{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -138,7 +138,6 @@ and (max-device-width : 1024px) {
 .btn-primary{
   color: black; margin-left: 30px;  text-decoration: none;position:relative;
 }
-
 .image{
   width:100px; height:100px;
 }

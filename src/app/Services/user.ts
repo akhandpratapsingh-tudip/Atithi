@@ -67,7 +67,7 @@ addHeader(): Headers {
    return headers;
   }
 
-  //
+
   getAllVisitor (): Observable<any> {
 
     let url="http://atithi.dev.tudip.com/api/visitors?token={"+localStorage.getItem('token')+'}';

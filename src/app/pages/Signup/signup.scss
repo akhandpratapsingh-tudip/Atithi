@@ -19,7 +19,7 @@
 }
 
 
-.thumb{
+.thumbnail{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -28,7 +28,7 @@
   position: absolute; top:8px; right:40px;
 }
 
-.form{
+.form-horizontal{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background:#ddd;
 }
 .containerinformation{
@@ -58,12 +58,10 @@ and (max-device-width : 1024px) {
 
 }
 
-.btninfo {
-  margin-right: 20px;
+.btn-primary {
+  margin-right: 40px;
+
 }
-
-
-
 .signupContainer{
   text-align: center;
   .signupSegment{
@@ -162,4 +160,8 @@ and (max-device-width : 1024px) {
 }
 .image{
   width:100px; height:100px;
+}
+.form-horizontal .form-group {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }

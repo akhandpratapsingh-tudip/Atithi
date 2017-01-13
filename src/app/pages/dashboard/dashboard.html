@@ -3,7 +3,7 @@
     <div class="row">
         <div>
            <div>
-                <nav class="navbar navbar-inverse navinfo">
+                <nav class="navbar navbar-inverse">
 
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -12,13 +12,11 @@
                             <li ><a data-toggle="tab"  href="#View" (click)="getVisitors()">View Visitor</a></li>
                             <li ><a data-toggle="tab"  href="#add">Add Visitor</a></li>
                         </ul>
-
-                        <button class="btn btn-success logoutbtn" [routerLink]="['/login']" (click)="logout()" >
+                        <button class="btn btn-success" [routerLink]="['/login']" (click)="logout()" >
                         <span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></button>
                     </div>
                 </nav>
                 <br>
-
                 <div class="tab-content">
                     <div  id="View" class="tab-pane fade in active">
                         <div *ngIf = "editVisitor" class="col-md-6 col-md-offset-3 jumbotron " >
@@ -26,34 +24,26 @@
                             <h2 align="center" class="updatevisitor">
                             Update Visitor</h2><hr>
                             <form  [formGroup]="form" class="form"  (ngSubmit)="update(form.value)">
-
                                 <div class="txtschool">
                                     <label for="name">Name</label>
                                     <input [formControl]="name" type="text"   name="name"  class="login-input form-group form-control" [(ngModel)]="visitorEdit.name" [value]="visitorEdit.name" pattern="[a-zA-Z.]{3,20}" required>
                                 </div>
-
                                 <div class="txtschool">
                                     <label for="email">Email</label>
                                     <input  [formControl]="email"  type="email"  name="email" class="login-input form-group form-control" [(ngModel)]="visitorEdit.email" [value]="visitorEdit.email" pattern="[a-zA-Z{@}a-zA-Z{.}a-zA-Z.]{4,50}" required >
                                 </div>
-
                                 <div class="txtschool">
                                     <label for="mobile">Mobile</label>
                                     <input  [formControl]="mobile" type="tel" pattern="[1-9][0-9]{9}" name="phone_no"  class="login-input form-group form-control" [(ngModel)]="visitorEdit.phone_no"[value]= "visitorEdit.phone_no" required>
                                 </div>
-
                                 <div class="txtschool">
                                     <label for="intime">In Time</label>
-
                                     <input [formControl]="in_time" type="datetime" name="in_time" class="login-input form-group form-control" [(ngModel)]="visitorEdit.in_time" required/>
                                 </div>
-
                                 <div class="txtschool">
                                     <label for="outtime">Out Time</label>
-
                                     <input  [formControl]="out_time" type="datetime" name="out_time" class="login-input form-group form-control" [(ngModel)]="visitorEdit.out_time" required/>
                                 </div>
-
                                 <div class="txtschool">
                                     <br><button  type="submit" class="btn btn-info btn-md" >Update</button>
                                     <button class="btn btn-info btn-md"  (click)="editVisitor = false">Cancel</button>
@@ -83,7 +73,6 @@
                                         <td>{{visitor.phone_no}}</td>
                                         <td>{{visitor.in_time}}</td>
                                         <td>{{visitor.out_time}}</td>
-
                                       <td *ngIf="!hideElement"> <input [(ngModel)]="visitor.name"></td>
                                       <td *ngIf="!hideElement"><input [(ngModel)]="visitor.name"></td>
                                       <td *ngIf="!hideElement"><input [(ngModel)]="visitor.email"></td>
