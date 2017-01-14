@@ -2,14 +2,6 @@
     .loginSegment{
         width: 100% !important;
     }
-    .horizontalLine{
-        display: inline-block;
-        width: 35%;
-        hr{
-            margin-top: -4px !important;
-            margin-bottom: 0 !important;
-        }
-    }
     .signinText{
         display: inline-block;
         width: 27%;
@@ -44,17 +36,13 @@ and (max-device-width : 1024px) {
 .thumbnail{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-
-.containerinfo{
-  background: darkslateblue;
-  height: 662px !important; ;
-  position: relative;
-}
 .danger{
   position: absolute; top:8px; right:40px;
 }
 .loginContainer{
+  background: darkslateblue;
+  height: 662px !important; ;
+  position: relative;
    text-align: center;
     .loginSegment{
         width: 28%;

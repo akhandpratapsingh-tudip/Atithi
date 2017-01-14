@@ -2,41 +2,21 @@
   .signupSegment{
     width: 100% !important;
   }
-  .horizontalLine{
-    display: inline-block;
-    width: 35%;
-    hr{
-      margin-top: -4px !important;
-      margin-bottom: 0 !important;
-    }
-  }
   .signinText{
     display: inline-block;
     width: 27%;
     padding: 0px;
   }
-
 }
-
-
 .thumbnail{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-
 .warn{
   position: absolute; top:8px; right:40px;
 }
-
 .form-horizontal{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background:#ddd;
 }
-.containerinformation{
-  background: darkslateblue;
-  position: relative;
-  height: 662px !important;
-}
-
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
@@ -55,14 +35,14 @@ and (max-device-width : 1024px) {
     display: inline-block;
     width: 27%;
   }
-
 }
-
 .btn-primary {
   margin-right: 40px;
-
 }
 .signupContainer{
+  background: darkslateblue;
+  position: relative;
+  height: 662px !important;
   text-align: center;
   .signupSegment{
       width: 28%;
@@ -85,15 +65,7 @@ and (max-device-width : 1024px) {
              font-family: ff-clan-web-pro, "Helvetica Neue", Helvetica, sans-serif;
         }
        .signin{
-           //font-size: 18px;
            text-align: left;
-       }
-       .horizontalLine{
-            margin-left: 0 !important;
-            padding: 0 !important;
-            hr{
-                    border-top: 1px solid gainsboro !important;
-            }
        }
         .signinText{
              margin-top: 6%;

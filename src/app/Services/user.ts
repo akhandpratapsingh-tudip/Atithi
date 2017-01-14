@@ -20,8 +20,6 @@ export class UserService {
     this.httpClient = httpClient;
   }
 
-  // For signup service
-
   userLogin(data): Observable<any> {
 
     return this.httpClient.postPreLogin(this.loginUrl, data)
@@ -41,15 +39,10 @@ private extractResponse(res: JSON) {
   private handleError(error: any) {
     console.log("incorrect credentials");
     return Observable.throw(error);
-
-
   }
-
-
 addHeader(): Headers {
      let headers = new Headers();
      headers.append('Content-Type', 'application/json');
-    //  headers.append('token', localStorage.getItem('token'));
      return headers;
   }
   addVisitor (data): Observable<any> {
@@ -61,7 +54,6 @@ addHeader(): Headers {
       .catch(this.handleError);
   }
   addVisitorHeader():Headers{
-
    let headers=new Headers();
    headers.append('Content-Type','application/json');
    return headers;
